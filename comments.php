@@ -12,6 +12,7 @@
         $comment = [
             "name" => $_POST['name'],
             "comment" => $_POST['comment'],
+            "date" => time(),
         ];
 
         $comments[] = $comment;

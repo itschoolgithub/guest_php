@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $comment['name'] ?></h5>
                             <p class="card-text"><?php echo $comment['comment'] ?></p>
-                            <div class="text-secondary">12.03.2024 12:22</div>
+                            <div class="text-secondary"><?php echo date("d.m.Y H:i:s", $comment['date']) ?></div>
                         </div>
                     </div>
                 <?php } ?>
