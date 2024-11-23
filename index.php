@@ -1,3 +1,7 @@
+<?php 
+    $comments = file_get_contents("comments.txt");
+    $comments = json_decode($comments, true);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,28 +19,29 @@
         </div>
         <div class="row mb-2">
             <div class="col">
-
-                <div class="card mb-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Дмитрий</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="text-secondary">12.03.2024 12:22</div>
+                <?php foreach ($comments as $comment) { ?>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $comment['name'] ?></h5>
+                            <p class="card-text"><?php echo $comment['comment'] ?></p>
+                            <div class="text-secondary">12.03.2024 12:22</div>
+                        </div>
                     </div>
-                </div>
-
+                <?php } ?>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <form action="" method="">
+                <form action="comments.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" require>
                     </div>
                     <div class="mb-3">
                         <label for="comment" class="form-label">Комментарий</label>
-                        <textarea class="form-control" id="comment" name="comment"></textarea>
+                        <textarea class="form-control" id="comment" name="comment" require></textarea>
                     </div>
+                    <button class="btn btn-success">Отправить</button>
                 </form>
             </div>
         </div>
