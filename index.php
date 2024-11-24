@@ -16,6 +16,9 @@
             <div class="col">
                 <h1>Гостевая книга</h1>
             </div>
+            <div class="col text-end">
+                <a href="forum.php">Форум</a>
+            </div>
         </div>
         <div class="row mb-2">
             <div class="col">
