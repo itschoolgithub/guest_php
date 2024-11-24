@@ -10,8 +10,8 @@
         $comments = json_decode($comments, true);
 
         $comment = [
-            "name" => $_POST['name'],
-            "comment" => $_POST['comment'],
+            "name" => htmlspecialchars($_POST['name']),
+            "comment" => htmlspecialchars($_POST['comment']),
             "date" => time(),
         ];
 

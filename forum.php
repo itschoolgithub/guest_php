@@ -1,3 +1,7 @@
+<?php
+    $themes = scandir("themes");
+    unset($themes[0], $themes[1]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,18 @@
             </div>
             <div class="col text-end">
                 <a href="index.php">Гостевая книга</a>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col">
+                <?php foreach ($themes as $theme) { ?>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $theme ?></h5>
+                            <a href="theme.php?theme=<?= $theme ?>" class="btn btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
         <div class="row">
